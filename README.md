@@ -1,8 +1,9 @@
 # Brain Tumor Classification App 
 ![image](https://github.com/user-attachments/assets/34515434-c378-464b-9a39-f4ec0367e9cb)
 
-
 This **Streamlit** web application classifies brain tumor types based on MRI images. It uses a pre-trained Convolutional Neural Network (CNN) model to predict the presence and type of brain tumor, including Glioma, Meningioma, Pituitary tumors, or No tumor.
+
+Website Link : [Click here](https://huggingface.co/spaces/victor009/brain-tumor-classification)
 
 ## 🛠 Features
 

@@ -100,10 +100,10 @@ pip install -r requirements.txt
 ## 📸 Screenshots
 
 ### App Interface:
-![image1](https://github.com/user-attachments/assets/60d0fe93-f3e4-45f9-b639-b40b740bf6d6)
+![Screenshot 2024-12-18 183640](https://github.com/user-attachments/assets/9cd77d77-6951-4e64-bfc5-7ce10e0017c7)
 
 ### Prediction Results:
-![image2](https://github.com/user-attachments/assets/61f539b5-08c7-4383-af6a-d4d03ad770ff)
+![Screenshot 2024-12-18 183849](https://github.com/user-attachments/assets/0399128b-6610-4333-893c-de1c5ea902e2)
 
 ## 🧑‍💻 How to Train the Model (Optional)
 

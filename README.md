@@ -1,9 +1,10 @@
-# Brain Tumor Classification App
+# [Brain Tumor Classification App ](https://brain-tumor-classification-app.streamlit.app)
 ![image](https://github.com/user-attachments/assets/34515434-c378-464b-9a39-f4ec0367e9cb)
 
 
 This **Streamlit** web application classifies brain tumor types based on MRI images. It uses a pre-trained Convolutional Neural Network (CNN) model to predict the presence and type of brain tumor, including Glioma, Meningioma, Pituitary tumors, or No tumor.
 
+Website Link :- [click here](https://brain-tumor-classification-app.streamlit.app)
 ## 🛠 Features
 
 - **User Input**: Upload an MRI image of the brain (grayscale).
@@ -76,9 +77,12 @@ The model is trained using a dataset of MRI images of brains with various tumor 
 
 ```
 Brain-Tumor-Classification-App/
+├── .streamlit/
 ├── brain-tumor-dataset/
-├── model/
-│   └── brain-tumor-model.h5
+├── .gitattributes
+├── .gitignore
+├── brain-tumor-classification.ipynb
+├── brain-tumor-model.h5
 ├── train.py
 ├── main.py
 ├── requirements.txt
@@ -115,7 +119,7 @@ pip install -r requirements.txt
 python train.py
 ```
 
-This will retrain the model and save the updated `brain-tumor-model.h5` file in the `model/` folder.
+This will retrain the model and save the updated `brain-tumor-model.h5` file.
 
 ## 🔄 Example
 ### Input:

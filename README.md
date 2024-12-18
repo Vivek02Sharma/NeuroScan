@@ -1,4 +1,4 @@
-# [Brain Tumor Classification App ](https://brain-tumor-classification-app.streamlit.app)
+# Brain Tumor Classification App 
 ![image](https://github.com/user-attachments/assets/34515434-c378-464b-9a39-f4ec0367e9cb)
 
 

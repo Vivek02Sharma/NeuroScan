@@ -2,9 +2,11 @@ import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
 from PIL import Image
+import os
 
 # Load the pre-trained model
-MODEL_PATH = './model/brain-tumor-model.h5'
+base_dir = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(base_dir, 'model', 'brain-tumor-model.h5')
 model = load_model(MODEL_PATH)
 
 # Dictionary for class labels

@@ -5,8 +5,7 @@ from PIL import Image
 import os
 
 # Load the pre-trained model
-base_dir = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(base_dir, 'model', 'brain-tumor-model.h5')
+MODEL_PATH = './model/brain-tumor-model.h5'
 model = load_model(MODEL_PATH)
 
 # Dictionary for class labels

@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 
 # Load the pre-trained model
-MODEL_PATH = './model/brain-tumor-model.h5'
+MODEL_PATH = 'brain-tumor-model.h5'
 model = load_model(MODEL_PATH)
 
 # Dictionary for class labels

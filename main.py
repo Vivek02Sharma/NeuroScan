@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
 from PIL import Image
-import os
 
 # Load the pre-trained model
 MODEL_PATH = './model/brain-tumor-model.h5'

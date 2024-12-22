@@ -2,6 +2,8 @@ import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
 from PIL import Image
+from streamlit_image_select import image_select
+import os
 
 # Load the pre-trained model
 MODEL_PATH = 'brain-tumor-model.h5'
@@ -32,17 +34,48 @@ st.set_page_config(
 
 st.markdown("## :orange[Brain Tumor Classification]")
 st.markdown("---")
-st.write("Upload an MRI image to classify if there is a brain tumor present and its type.")
+st.write("Select or upload an MRI image to classify if there is a brain tumor present and its type.")
+
+# Option to select an image from predefined set
+categories = {"Select":["Select"],
+    "Glioma": ["Select", "gl-1581.jpg", "gl-1582.jpg", "gl-1617.jpg", "gl-1618.jpg"],
+    "Meningioma": ["Select", "me-1733.jpg", "me-1773.jpg", "me-1774.jpg", "me-1775.jpg"],
+    "No tumor": ["Select", "no-1953.jpg", "no-1998.jpg", "no-1999.jpg", "no-2000.jpg"],
+    "Pituitary": ["Select", "pi-1740.jpg", "pi-1741.jpg", "pi-1742.jpg", "pi-1743.jpg"]
+}
+
+category = st.selectbox("Select a category", list(categories.keys()))
+if category is not "Select":
+  image_options = categories[category]
+  selected_image_name = st.selectbox("Select an image", image_options)
+  if selected_image_name is not "Select":
+    selected_image_path = os.path.join("Test image", category, selected_image_name)
+  else:
+    selected_image_path = None
+else:
+  selected_image_path = None
+  selected_image_name = None
+
+st.markdown("_:gray[OR]_")
 
 # File uploader for image
 uploaded_image = st.file_uploader("Choose an MRI Image", type = ["jpg", "jpeg", "png"])
-if uploaded_image is not None:
-    # Preprocess the uploaded image
-    img_array = preprocess_image(uploaded_image)
 
-    # Display the uploaded image with use_container_width
+if uploaded_image is not None:
+    img_array = preprocess_image(uploaded_image)
     st.image(uploaded_image, caption = "Uploaded MRI Image", use_container_width = True)
 
+    # Make the prediction
+    predicted_class, prediction_probabilities = predict_tumor(img_array)
+    
+    # Show the prediction result
+    st.write(f"Prediction : {class_names[predicted_class]}")
+    st.write(f"Prediction Probability : {prediction_probabilities[predicted_class] * 100:.2f}%")
+
+elif selected_image_path is not None and selected_image_name is not None:
+    selected_image = Image.open(selected_image_path)
+    img_array = preprocess_image(selected_image_path)
+    st.image(selected_image, caption = selected_image_name, use_container_width = True)
     # Make the prediction
     predicted_class, prediction_probabilities = predict_tumor(img_array)
     
